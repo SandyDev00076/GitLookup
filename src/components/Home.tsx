@@ -14,7 +14,7 @@ const Home = () => {
         <p className={styles.tagLine}>
           Search for anyone in the wonderful world of Git
         </p>
-        <UserSearch />
+        <UserSearch className={styles.userInput} />
       </div>
     </section>
   );
