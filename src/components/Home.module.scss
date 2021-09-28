@@ -1,6 +1,29 @@
+@use "../styles/shared";
+
 .container {
-  min-height: 100vh;
+  @extend %page;
   display: grid;
   place-items: center;
-  background-color: var(--bg);
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.appName {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.word2 {
+  color: var(--github-blue);
+}
+
+.tagLine {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
 }
