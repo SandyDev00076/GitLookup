@@ -1,0 +1,14 @@
+:root {
+  --bg: #fefefe; /* not converting as val of #FFFFFF and #FEFEFE is same in HSL */
+
+  --github: hsl(0, 2, 9);
+  --github-light-1: hsl(0, 2, 43);
+  --github-light-2: hsl(0, 2, 59);
+
+  --github-blue: hsl(205, 100, 37);
+  --github-blue-light-1: hsl(205, 100, 87);
+  --github-blue-light-2: hsl(205, 100, 97);
+
+  --text: var(--github);
+  --text-secondary: var(--github-blue-light-1);
+}
