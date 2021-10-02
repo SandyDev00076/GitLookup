@@ -1,12 +1,16 @@
 import React from "react";
 import UserSearch from "components/UserSearch";
+import { ForwardIcon } from "assets/icons";
+import { useHistory } from "react-router";
 
 import styles from "./Home.module.scss";
 
 const Home = () => {
+  const history = useHistory();
+
   function startSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // Logic to navigate to search page
+    history.push("/search");
   }
 
   return (
@@ -19,8 +23,15 @@ const Home = () => {
         <p className={styles.tagLine}>
           Search for anyone in the wonderful world of Git
         </p>
-        <form onSubmit={(e) => startSearch(e)}>
-          <UserSearch className={styles.userInput} autoFocus />
+        <form onSubmit={(e) => startSearch(e)} className={styles.searchForm}>
+          <UserSearch
+            className={styles.userInput}
+            inputClassName={styles.userInputField}
+            autoFocus
+          />
+          <button type="submit" className={styles.submitBtn}>
+            <ForwardIcon />
+          </button>
         </form>
       </div>
     </section>

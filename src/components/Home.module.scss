@@ -28,6 +28,31 @@
   margin-bottom: 24px;
 }
 
+.searchForm {
+  position: relative;
+}
+
 .userInput {
   min-width: 60vw;
+}
+
+.userInputField {
+  padding-right: 40px;
+}
+
+.submitBtn {
+  position: absolute;
+  right: 4px;
+  top: 6px;
+  background-color: inherit;
+
+  & > svg {
+    fill: var(--github-light-1);
+  }
+
+  &:hover {
+    & > svg {
+      fill: var(--github);
+    }
+  }
 }

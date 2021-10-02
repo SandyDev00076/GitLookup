@@ -1,5 +1,6 @@
 :root {
   --bg: #fefefe; /* not converting as val of #FFFFFF and #FEFEFE is same in HSL */
+  --bg-tint: hsl(0, 0%, 96%);
 
   --github: hsl(0, 2%, 9%);
   --github-light-1: hsl(0, 2%, 43%);
@@ -11,4 +12,6 @@
 
   --text: var(--github);
   --text-secondary: var(--github-light-1);
+
+  --white: #ffffff;
 }
