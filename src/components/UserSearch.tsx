@@ -4,14 +4,16 @@ import { cJoin } from "utils";
 
 import styles from "./UserSearch.module.scss";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {}
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+  inputClassName?: string;
+}
 
-const UserSearch = ({ className, ...props }: Props) => {
+const UserSearch = ({ className, inputClassName, ...props }: Props) => {
   return (
-    <div className={styles.container}>
+    <div className={cJoin(styles.container, className)}>
       <input
         type="text"
-        className={cJoin(styles.searchInput, className)}
+        className={cJoin(styles.searchInput, inputClassName)}
         placeholder="Type here"
         {...props}
       />

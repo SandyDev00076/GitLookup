@@ -4,6 +4,11 @@ import UserSearch from "components/UserSearch";
 import styles from "./Home.module.scss";
 
 const Home = () => {
+  function startSearch(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    // Logic to navigate to search page
+  }
+
   return (
     <section className={styles.container}>
       <div className={styles.panel}>
@@ -14,7 +19,9 @@ const Home = () => {
         <p className={styles.tagLine}>
           Search for anyone in the wonderful world of Git
         </p>
-        <UserSearch className={styles.userInput} />
+        <form onSubmit={(e) => startSearch(e)}>
+          <UserSearch className={styles.userInput} autoFocus />
+        </form>
       </div>
     </section>
   );
