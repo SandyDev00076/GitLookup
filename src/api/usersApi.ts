@@ -13,5 +13,8 @@ export async function fetchUsers(searchQuery: string, perPage: number) {
   const res = await fetch(
     `${SEARCH_BASE_URL}/users?${searchQueryParam}per_page=${perPage}`
   );
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
   return await res.json();
 }
