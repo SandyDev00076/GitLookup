@@ -18,3 +18,16 @@ export async function fetchUsers(searchQuery: string, perPage: number) {
   }
   return await res.json();
 }
+
+/**
+ * Returns the details of the user
+ * @param username Username of the user
+ * @returns Details of the user
+ */
+export async function fetchUserDetails(username: string) {
+  const res = await fetch(`${BASE_URL}/users/${username}`);
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+  return await res.json();
+}

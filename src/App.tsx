@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/user/:id">
+        <Route path="/user/:username">
           <UserDetails />
         </Route>
         <Route path="/search">
