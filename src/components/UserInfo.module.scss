@@ -1,0 +1,102 @@
+.container {
+  background-color: var(--bg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.backBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+  margin-right: 16px;
+
+  background-color: var(--github-blue);
+
+  & > svg {
+    fill: var(--white);
+  }
+}
+
+.username {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.userPic {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+
+.name {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.email {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.bio {
+  display: block;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--text);
+  margin-bottom: 16px;
+  &::before {
+    content: open-quote;
+  }
+  &::after {
+    content: close-quote;
+  }
+}
+
+.stats {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--github-blue);
+  strong {
+    color: var(--text);
+  }
+}
+
+.extraDetails {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+}
+
+.location,
+.work {
+  display: flex;
+  align-items: center;
+  & > svg {
+    height: 20px;
+    width: auto;
+    fill: var(--github-blue);
+    margin-right: 8px;
+  }
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.work {
+  margin-bottom: 10px;
+}
