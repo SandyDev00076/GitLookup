@@ -88,3 +88,27 @@
     color: var(--text);
   }
 }
+
+.extraDetails {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+}
+
+.location,
+.work {
+  display: flex;
+  align-items: center;
+  & > svg {
+    height: 20px;
+    width: auto;
+    fill: var(--github-blue);
+    margin-right: 8px;
+  }
+  font-size: 0.8rem;
+  color: var(--text);
+}
+
+.work {
+  margin-bottom: 10px;
+}

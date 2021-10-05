@@ -1,5 +1,5 @@
 import React from "react";
-import { BackIcon } from "assets/icons";
+import { BackIcon, LocationIcon, WorkIcon } from "assets/icons";
 import { useHistory, useParams } from "react-router";
 import { useUser } from "hooks/useUser";
 
@@ -31,6 +31,18 @@ const UserDetails = () => {
           <strong>{user.followers}</strong> followers -{" "}
           <strong>{user.following}</strong> following
         </span>
+        <div className={styles.extraDetails}>
+          {user.company && (
+            <div className={styles.work}>
+              <WorkIcon /> {user.company}
+            </div>
+          )}
+          {user.location && (
+            <div className={styles.location}>
+              <LocationIcon /> {user.location}
+            </div>
+          )}
+        </div>
       </div>
       <div className={styles.rightSide}></div>
     </section>
