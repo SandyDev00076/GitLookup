@@ -24,6 +24,13 @@ const UserDetails = () => {
           <h1 className={styles.username}>{user.login}</h1>
         </div>
         <img src={user.avatar_url} alt="avatar" className={styles.userPic} />
+        <h2 className={styles.name}>{user.name}</h2>
+        {user.email && <h1 className={styles.email}>{user.email}</h1>}
+        {user.bio && <p className={styles.bio}>{user.bio}</p>}
+        <span className={styles.stats}>
+          <strong>{user.followers}</strong> followers -{" "}
+          <strong>{user.following}</strong> following
+        </span>
       </div>
       <div className={styles.rightSide}></div>
     </section>
