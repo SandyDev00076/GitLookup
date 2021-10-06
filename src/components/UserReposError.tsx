@@ -2,12 +2,12 @@ import React from "react";
 import { NotFound } from "assets/icons";
 import { ApiError } from "types/Error";
 
-import styles from "./SearchError.module.scss";
+import styles from "./UserReposError.module.scss";
 
 interface Props {
   error: ApiError;
 }
-const SearchError = ({ error }: Props) => {
+const UserReposError = ({ error }: Props) => {
   return (
     <section className={styles.container}>
       <div className={styles.panel}>
@@ -33,4 +33,4 @@ const SearchError = ({ error }: Props) => {
   );
 };
 
-export default SearchError;
+export default UserReposError;

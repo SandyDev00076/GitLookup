@@ -3,6 +3,7 @@ import { useRepos } from "hooks/useRepos";
 import UserRepo from "./UserRepo";
 import UserReposLoader from "./UserReposLoader";
 import NoRepos from "./NoRepos";
+import UserReposError from "./UserReposError";
 
 import styles from "./UserRepos.module.scss";
 
@@ -11,10 +12,15 @@ interface Props {
   username: string;
 }
 const UserRepos = ({ reposURL, username }: Props) => {
-  const { data: repos, isLoading, isError } = useRepos(reposURL, username);
+  const {
+    data: repos,
+    isLoading,
+    isError,
+    error,
+  } = useRepos(reposURL, username);
 
   if (isLoading) return <UserReposLoader />;
-  if (isError) return <div>Error</div>;
+  if (isError && error) return <UserReposError error={error} />;
   if (repos === undefined || repos.length === 0) return <NoRepos />;
 
   return (
