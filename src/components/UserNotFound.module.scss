@@ -1,7 +1,7 @@
 @use "../styles/shared";
 
 .container {
-  @extend %searchPageAlertArea;
+  @extend %userDetailsAlertArea;
 }
 
 .panel {

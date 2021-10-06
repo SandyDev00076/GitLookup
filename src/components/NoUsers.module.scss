@@ -1,9 +1,9 @@
 @use "../styles/shared";
 
 .container {
-  @extend %searchPageInfoArea;
+  @extend %searchPageAlertArea;
 }
 
 .panel {
-  @extend %searchPageInfoPanel;
+  @extend %searchPageAlertPanel;
 }

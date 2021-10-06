@@ -3,16 +3,19 @@ import { useParams } from "react-router";
 import { useUser } from "hooks/useUser";
 import UserInfo from "./UserInfo";
 import UserRepos from "./UserRepos";
+import UserDetailsLoader from "./UserDetailsLoader";
+import UserNotFound from "./UserNotFound";
 
 import styles from "./UserDetails.module.scss";
 
 const UserDetails = () => {
   const { username } = useParams<{ username: string }>();
-  const { data: user, isLoading, isError } = useUser(username);
+  const { data: user, isLoading, isError, error } = useUser(username);
 
-  if (isLoading) return <div>Loading</div>;
+  if (isLoading) return <UserDetailsLoader />;
+  if ((isError && error?.message === "Not Found") || user === undefined)
+    return <UserNotFound username={username} />;
   if (isError) return <div>Error</div>;
-  if (user === undefined) return <div>No user</div>;
 
   return (
     <section className={styles.container}>

@@ -7,6 +7,7 @@
     height: 10px;
     border-radius: 5px;
     animation: glow 1s infinite linear;
+    background-color: var(--github-light-1);
 
     &:nth-child(1) {
       animation-delay: 200ms;
