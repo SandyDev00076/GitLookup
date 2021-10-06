@@ -1,0 +1,9 @@
+@use "../styles/shared";
+
+.container {
+  @extend %searchPageAlertArea;
+}
+
+.panel {
+  @extend %errorPanel;
+}
