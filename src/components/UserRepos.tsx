@@ -2,6 +2,7 @@ import React from "react";
 import { useRepos } from "hooks/useRepos";
 import UserRepo from "./UserRepo";
 import UserReposLoader from "./UserReposLoader";
+import NoRepos from "./NoRepos";
 
 import styles from "./UserRepos.module.scss";
 
@@ -14,7 +15,7 @@ const UserRepos = ({ reposURL, username }: Props) => {
 
   if (isLoading) return <UserReposLoader />;
   if (isError) return <div>Error</div>;
-  if (repos === undefined) return <div>Repos could not be found</div>;
+  if (repos === undefined || repos.length === 0) return <NoRepos />;
 
   return (
     <div className={styles.container}>
