@@ -5,6 +5,7 @@ import UserInfo from "./UserInfo";
 import UserRepos from "./UserRepos";
 import UserDetailsLoader from "./UserDetailsLoader";
 import UserNotFound from "./UserNotFound";
+import UserError from "./UserError";
 
 import styles from "./UserDetails.module.scss";
 
@@ -15,7 +16,7 @@ const UserDetails = () => {
   if (isLoading) return <UserDetailsLoader />;
   if ((isError && error?.message === "Not Found") || user === undefined)
     return <UserNotFound username={username} />;
-  if (isError) return <div>Error</div>;
+  if (isError && error) return <UserError error={error} />;
 
   return (
     <section className={styles.container}>
