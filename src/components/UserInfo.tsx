@@ -26,6 +26,7 @@ const UserInfo = ({ user }: Props) => {
         <strong>{user.followers}</strong> followers -{" "}
         <strong>{user.following}</strong> following
       </span>
+      <div style={{ flex: "1" }}></div>
       <div className={styles.extraDetails}>
         {user.company && (
           <div className={styles.work}>

@@ -75,12 +75,11 @@
   strong {
     color: var(--text);
   }
+  margin-bottom: 32px;
 }
 
 .extraDetails {
-  position: absolute;
-  bottom: 32px;
-  left: 32px;
+  width: 100%;
 }
 
 .location,
