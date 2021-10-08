@@ -13,3 +13,9 @@
   width: 100%;
   margin-bottom: 32px;
 }
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 32px;
+  }
+}
