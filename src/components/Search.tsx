@@ -7,7 +7,9 @@ import styles from "./Search.module.scss";
 const Search = () => {
   return (
     <section className={styles.container}>
-      <UserSearch className={styles.userInput} autoFocus />
+      <div className={styles.searchWrapper}>
+        <UserSearch className={styles.userInput} autoFocus />
+      </div>
       <Users />
     </section>
   );
