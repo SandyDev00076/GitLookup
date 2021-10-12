@@ -4,6 +4,7 @@ import UserRepo from "./UserRepo";
 import UserReposLoader from "./UserReposLoader";
 import NoRepos from "./NoRepos";
 import UserReposError from "./UserReposError";
+import Loading from "./Loading";
 
 import styles from "./UserRepos.module.scss";
 
@@ -13,23 +14,36 @@ interface Props {
 }
 const UserRepos = ({ reposURL, username }: Props) => {
   const {
-    data: repos,
+    data,
     isLoading,
     isError,
     error,
+    fetchNextPage,
+    hasNextPage,
+    isFetching,
   } = useRepos(reposURL, username);
 
   if (isLoading) return <UserReposLoader />;
   if (isError && error) return <UserReposError error={error} />;
-  if (repos === undefined || repos.length === 0) return <NoRepos />;
+  if (!data || data.pages.length === 0) return <NoRepos />;
 
   return (
     <div className={styles.container}>
       <h1 className={styles.reposTitle}>Public Repos</h1>
       <div className={styles.repos}>
-        {repos.map((repo) => (
-          <UserRepo repo={repo} key={repo.id} />
-        ))}
+        {data.pages.map((page) =>
+          page.repos.map((repo) => <UserRepo repo={repo} key={repo.id} />)
+        )}
+        {isFetching && (
+          <div className={styles.loadingRepos}>
+            <Loading />
+          </div>
+        )}
+        {hasNextPage && (
+          <button className={styles.loadMore} onClick={() => fetchNextPage()}>
+            Load More
+          </button>
+        )}
       </div>
     </div>
   );
