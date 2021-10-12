@@ -29,6 +29,7 @@ p {
 
 input,
 button {
+  font-family: inherit;
   border: none;
   &:focus {
     outline: none;

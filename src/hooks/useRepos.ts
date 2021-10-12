@@ -1,10 +1,17 @@
-import { useQuery } from "react-query";
-import { fetchRepos } from "api/reposApi";
-import { Repo } from "types/Repo";
+import { useInfiniteQuery } from "react-query";
+import { fetchInfiniteRepos } from "api/reposApi";
 import { ApiError } from "types/Error";
+import { ReposRequest } from "types/ReposRequest";
 
 export const useRepos = (reposURL: string, username: string) => {
-  return useQuery<Repo[], ApiError>(["user-repos", username], () =>
-    fetchRepos(reposURL)
+  return useInfiniteQuery<ReposRequest, ApiError>(
+    ["user-repos", username],
+    ({ pageParam }) => fetchInfiniteRepos(reposURL, pageParam),
+    {
+      getNextPageParam: (lastPage, pages) => {
+        if (lastPage.nextPageIndex) return lastPage.nextPageIndex;
+        return false;
+      },
+    }
   );
 };
