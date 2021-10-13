@@ -1,5 +1,5 @@
 :root {
-  --bg: #fefefe; /* not converting as val of #FFFFFF and #FEFEFE is same in HSL */
+  --bg: hsl(0, 0%, 95%);
   --bg-tint: hsl(0, 0%, 96%);
 
   --github: hsl(0, 2%, 9%);

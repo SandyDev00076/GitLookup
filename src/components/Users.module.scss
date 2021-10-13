@@ -3,9 +3,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
-  max-height: calc(100vh - 103px);
+  max-height: calc(100vh - 106px);
   overflow-y: auto;
-  padding: 0 20%;
+  padding: 0 20% 32px;
 }
 
 @media screen and (max-width: 600px) {
