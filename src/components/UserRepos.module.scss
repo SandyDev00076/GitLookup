@@ -37,6 +37,9 @@
 }
 
 @media screen and (max-width: 800px) {
+  .container {
+    height: 100vh;
+  }
   .repos {
     max-height: calc(100vh - 94px);
   }
