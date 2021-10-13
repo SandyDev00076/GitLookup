@@ -18,7 +18,7 @@ export async function fetchInfiniteRepos(
   return {
     repos: data,
     nextPageIndex:
-      linkHeader && parsedLinkHeader
+      linkHeader && parsedLinkHeader && parsedLinkHeader["next"]
         ? parseInt(parsedLinkHeader["next"].page)
         : null,
   };
