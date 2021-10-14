@@ -3,7 +3,7 @@
 }
 
 .searchInput {
-  padding: 10px 16px 10px 40px;
+  padding: 10px 40px;
   border-radius: 20px;
   font-size: 1rem;
   width: 100%;
@@ -34,7 +34,7 @@
     width: 22px;
     height: auto;
     &:hover {
-      fill: var(--github-light-1);
+      fill: var(--github);
     }
   }
 }

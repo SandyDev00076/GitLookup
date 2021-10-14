@@ -59,6 +59,7 @@
   font-style: italic;
   text-align: center;
   color: var(--text);
+  word-break: break-word;
   margin-bottom: 16px;
   &::before {
     content: open-quote;

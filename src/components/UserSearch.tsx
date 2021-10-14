@@ -20,16 +20,11 @@ const UserSearch = ({
     ({ searchQuery, setSearchQuery }) => [searchQuery, setSearchQuery]
   );
 
-  const inputStyleWhenClearBtn: React.CSSProperties = {
-    paddingRight: searchQuery && showClearButton ? "40px" : "16px",
-  };
-
   return (
     <div className={cJoin(styles.container, className)}>
       <input
         type="text"
         className={cJoin(styles.searchInput, inputClassName)}
-        style={inputStyleWhenClearBtn}
         placeholder="Type here"
         {...props}
         value={searchQuery}
