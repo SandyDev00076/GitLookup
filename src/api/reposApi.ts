@@ -10,7 +10,7 @@ export async function fetchInfiniteRepos(
   url: string,
   pageParam = 1
 ): Promise<ReposRequest> {
-  const res = await fetch(`${url}?page=${pageParam}`);
+  const res = await fetch(`${url}?page=${pageParam}&sort=updated`);
   const linkHeader = res.headers.get("Link");
   let parsedLinkHeader: parseLink.Links | null = null;
   if (linkHeader) parsedLinkHeader = parseLink(linkHeader);
