@@ -23,9 +23,13 @@ const UserRepos = ({ reposURL, username }: Props) => {
     isFetching,
   } = useRepos(reposURL, username);
 
+  console.log(username, data);
+
   if (isLoading) return <UserReposLoader />;
   if (isError && error) return <UserReposError error={error} />;
   if (!data || data.pages.length === 0) return <NoRepos />;
+  if (data.pages.length === 1 && data.pages[0].repos.length === 0)
+    return <NoRepos />;
 
   return (
     <div className={styles.container}>
