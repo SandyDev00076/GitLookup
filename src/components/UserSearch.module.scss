@@ -22,3 +22,19 @@
   height: auto;
   fill: var(--github-light-2);
 }
+
+.clearBtn {
+  position: absolute;
+  padding: 0;
+  background-color: inherit;
+  top: 10px;
+  right: 12px;
+  & > svg {
+    fill: var(--github-light-2);
+    width: 22px;
+    height: auto;
+    &:hover {
+      fill: var(--github-light-1);
+    }
+  }
+}

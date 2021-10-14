@@ -8,7 +8,7 @@ const Search = () => {
   return (
     <section className={styles.container}>
       <div className={styles.searchWrapper}>
-        <UserSearch className={styles.userInput} autoFocus />
+        <UserSearch className={styles.userInput} autoFocus showClearButton />
       </div>
       <Users />
     </section>
