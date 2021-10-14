@@ -40,3 +40,19 @@ button {
 button {
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
+  background-color: var(--github-light-1);
+  &:hover {
+    background-color: var(--github);
+  }
+}
