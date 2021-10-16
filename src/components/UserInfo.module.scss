@@ -84,7 +84,9 @@
 }
 
 .location,
-.work {
+.work,
+.twitter,
+.site {
   display: flex;
   align-items: center;
   & > svg {
@@ -95,8 +97,5 @@
   }
   font-size: 0.8rem;
   color: var(--text);
-}
-
-.work {
-  margin-bottom: 10px;
+  margin-top: 10px;
 }

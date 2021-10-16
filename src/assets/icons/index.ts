@@ -6,6 +6,8 @@ import { ReactComponent as BackIcon } from "./arrow_back_black_24dp.svg";
 import { ReactComponent as WorkIcon } from "./work_black_24dp.svg";
 import { ReactComponent as LocationIcon } from "./place_black_24dp.svg";
 import { ReactComponent as ClearIcon } from "./close_black_24dp.svg";
+import { ReactComponent as TwitterIcon } from "./twitter.svg";
+import { ReactComponent as SiteIcon } from "./language_black_24dp.svg";
 
 export {
   SearchIcon,
@@ -16,4 +18,6 @@ export {
   WorkIcon,
   LocationIcon,
   ClearIcon,
+  TwitterIcon,
+  SiteIcon,
 };

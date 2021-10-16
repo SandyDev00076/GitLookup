@@ -1,7 +1,14 @@
 import React from "react";
-import { BackIcon, LocationIcon, WorkIcon } from "assets/icons";
+import {
+  BackIcon,
+  LocationIcon,
+  SiteIcon,
+  TwitterIcon,
+  WorkIcon,
+} from "assets/icons";
 import { useHistory } from "react-router";
 import { User } from "types/User";
+import GoodAnchor from "./GoodAnchor";
 
 import styles from "./UserInfo.module.scss";
 
@@ -28,6 +35,19 @@ const UserInfo = ({ user }: Props) => {
       </span>
       <div style={{ flex: "1" }}></div>
       <div className={styles.extraDetails}>
+        {user.blog && (
+          <div className={styles.site}>
+            <SiteIcon /> <GoodAnchor href={user.blog}>{user.blog}</GoodAnchor>
+          </div>
+        )}
+        {user.twitter_username && (
+          <div className={styles.twitter}>
+            <TwitterIcon />{" "}
+            <GoodAnchor href={`https://twitter.com/${user.twitter_username}`}>
+              {user.twitter_username}
+            </GoodAnchor>
+          </div>
+        )}
         {user.company && (
           <div className={styles.work}>
             <WorkIcon /> {user.company}
