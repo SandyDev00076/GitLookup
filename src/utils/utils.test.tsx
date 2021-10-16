@@ -10,4 +10,8 @@ it("should provide correct class string with undefined entries", () => {
 
 it("should fix the link", () => {
   expect(fixLink("sanjeettiwari.com")).toBe("http://sanjeettiwari.com");
+  expect(fixLink("https://sanjeettiwari.com")).toBe(
+    "https://sanjeettiwari.com"
+  );
+  expect(fixLink("http://sanjeettiwari.com")).toBe("http://sanjeettiwari.com");
 });
