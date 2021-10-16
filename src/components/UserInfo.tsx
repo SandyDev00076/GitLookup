@@ -1,5 +1,11 @@
 import React from "react";
-import { BackIcon, LocationIcon, TwitterIcon, WorkIcon } from "assets/icons";
+import {
+  BackIcon,
+  LocationIcon,
+  SiteIcon,
+  TwitterIcon,
+  WorkIcon,
+} from "assets/icons";
 import { useHistory } from "react-router";
 import { User } from "types/User";
 
@@ -28,6 +34,14 @@ const UserInfo = ({ user }: Props) => {
       </span>
       <div style={{ flex: "1" }}></div>
       <div className={styles.extraDetails}>
+        {user.blog && (
+          <div className={styles.site}>
+            <SiteIcon />{" "}
+            <a href={user.blog} target="_blank" rel="noopener noreferrer">
+              {user.blog}
+            </a>
+          </div>
+        )}
         {user.twitter_username && (
           <div className={styles.twitter}>
             <TwitterIcon />{" "}
