@@ -1,6 +1,7 @@
 import React from "react";
 import { NotFound } from "assets/icons";
 import { ApiError } from "types/Error";
+import GoodAnchor from "./GoodAnchor";
 
 import styles from "./SearchError.module.scss";
 
@@ -18,13 +19,9 @@ const SearchError = ({ error }: Props) => {
         {error.documentation_url && (
           <h2>
             Check out{" "}
-            <a
-              href={error.documentation_url}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <GoodAnchor href={error.documentation_url}>
               {error.documentation_url}
-            </a>{" "}
+            </GoodAnchor>{" "}
             for more info
           </h2>
         )}

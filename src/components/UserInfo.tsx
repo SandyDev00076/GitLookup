@@ -8,6 +8,7 @@ import {
 } from "assets/icons";
 import { useHistory } from "react-router";
 import { User } from "types/User";
+import GoodAnchor from "./GoodAnchor";
 
 import styles from "./UserInfo.module.scss";
 
@@ -36,22 +37,15 @@ const UserInfo = ({ user }: Props) => {
       <div className={styles.extraDetails}>
         {user.blog && (
           <div className={styles.site}>
-            <SiteIcon />{" "}
-            <a href={user.blog} target="_blank" rel="noopener noreferrer">
-              {user.blog}
-            </a>
+            <SiteIcon /> <GoodAnchor href={user.blog}>{user.blog}</GoodAnchor>
           </div>
         )}
         {user.twitter_username && (
           <div className={styles.twitter}>
             <TwitterIcon />{" "}
-            <a
-              href={`https://twitter.com/${user.twitter_username}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <GoodAnchor href={`https://twitter.com/${user.twitter_username}`}>
               {user.twitter_username}
-            </a>
+            </GoodAnchor>
           </div>
         )}
         {user.company && (
