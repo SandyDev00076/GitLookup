@@ -5,3 +5,9 @@ export function cJoin(...args: (string | undefined)[]) {
   });
   return finalClass.trim();
 }
+
+export function fixLink(link: string) {
+  if (!link.includes("https://") && !link.includes("http://"))
+    return `http://${link}`;
+  return link;
+}

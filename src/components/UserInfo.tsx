@@ -9,6 +9,7 @@ import {
 import { useHistory } from "react-router";
 import { User } from "types/User";
 import GoodAnchor from "./GoodAnchor";
+import { fixLink } from "utils";
 
 import styles from "./UserInfo.module.scss";
 
@@ -37,7 +38,8 @@ const UserInfo = ({ user }: Props) => {
       <div className={styles.extraDetails}>
         {user.blog && (
           <div className={styles.site}>
-            <SiteIcon /> <GoodAnchor href={user.blog}>{user.blog}</GoodAnchor>
+            <SiteIcon />{" "}
+            <GoodAnchor href={fixLink(user.blog)}>{user.blog}</GoodAnchor>
           </div>
         )}
         {user.twitter_username && (
