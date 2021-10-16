@@ -1,5 +1,5 @@
 import React from "react";
-import { BackIcon, LocationIcon, WorkIcon } from "assets/icons";
+import { BackIcon, LocationIcon, TwitterIcon, WorkIcon } from "assets/icons";
 import { useHistory } from "react-router";
 import { User } from "types/User";
 
@@ -28,6 +28,18 @@ const UserInfo = ({ user }: Props) => {
       </span>
       <div style={{ flex: "1" }}></div>
       <div className={styles.extraDetails}>
+        {user.twitter_username && (
+          <div className={styles.twitter}>
+            <TwitterIcon />{" "}
+            <a
+              href={`https://twitter.com/${user.twitter_username}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {user.twitter_username}
+            </a>
+          </div>
+        )}
         {user.company && (
           <div className={styles.work}>
             <WorkIcon /> {user.company}
