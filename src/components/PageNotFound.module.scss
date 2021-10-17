@@ -1,0 +1,9 @@
+@use "../styles/shared";
+
+.container {
+  @extend %userDetailsAlertArea;
+}
+
+.panel {
+  @extend %errorPanel;
+}
